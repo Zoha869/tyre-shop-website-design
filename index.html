@@ -11,6 +11,9 @@
 
   <title>Wolf Vanguard Tyres</title>
 
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * {
       margin: 0;
@@ -45,11 +48,11 @@
 
     nav {
       display: flex;
+      gap: 20px;
     }
 
     nav a {
       color: #fff;
-      margin-left: 25px;
       text-decoration: none;
       transition: 0.3s;
       font-weight: 500;
@@ -74,28 +77,28 @@
     .hero h2 {
       font-size: 48px;
       color: #ff3b3b;
+      animation: fadeUp 1s ease;
     }
 
     .hero p {
       margin: 15px 0;
       font-size: 18px;
       color: #ccc;
+      animation: fadeUp 1.5s ease;
     }
 
     .btn {
       padding: 12px 25px;
-      background: red;
+      background: linear-gradient(45deg, red, #ff3b3b);
       color: #fff;
-      border: none;
-      cursor: pointer;
       text-decoration: none;
       transition: 0.3s;
       display: inline-block;
-      border-radius: 4px;
+      border-radius: 25px;
     }
 
     .btn:hover {
-      background: darkred;
+      transform: scale(1.05);
     }
 
     /* Sections */
@@ -115,7 +118,6 @@
       max-width: 700px;
       margin: auto;
       color: #ccc;
-      font-size: 17px;
     }
 
     /* Services */
@@ -127,16 +129,22 @@
 
     .service-box {
       background: #222;
-      padding: 20px;
+      padding: 25px;
       margin: 10px;
       width: 220px;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
+    .service-box i {
+      font-size: 30px;
+      color: red;
+      margin-bottom: 10px;
+    }
+
     .service-box:hover {
-      transform: translateY(-10px);
-      background: #333;
+      transform: translateY(-12px);
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
     }
 
     /* Products */
@@ -150,14 +158,20 @@
       background: #222;
       margin: 15px;
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       width: 250px;
       transition: 0.3s;
     }
 
     .product img {
       width: 100%;
-      border-radius: 5px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin-top: 10px;
     }
 
     .product p {
@@ -166,12 +180,18 @@
     }
 
     .product:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
     }
 
     /* Contact */
     .contact {
       background: #000;
+    }
+
+    .contact i {
+      color: red;
+      margin-right: 8px;
     }
 
     form {
@@ -202,10 +222,22 @@
       color: #aaa;
     }
 
-    /* ✅ Responsive FIX (IMPORTANT) */
+    /* Animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       header {
-        flex-direction: row; /* KEEP SAME LINE */
+        flex-direction: row;
         padding: 15px;
       }
 
@@ -213,13 +245,7 @@
         font-size: 16px;
       }
 
-      nav {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
       nav a {
-        margin: 5px 10px;
         font-size: 14px;
       }
 
@@ -249,7 +275,7 @@
 <section class="hero">
   <div>
     <h2>Premium Tyres for Maximum Performance</h2>
-    <p>High-quality tyres and expert services ensuring safety, durability, and top performance on every road.</p>
+    <p>High-quality tyres and expert services ensuring safety and durability.</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
@@ -257,19 +283,32 @@
 <section id="about">
   <h2 class="section-title">About Us</h2>
   <p>
-    At Wolf Vanguard Tyres, we specialize in providing premium quality tyres and reliable automotive services.
-    With a strong focus on customer satisfaction, safety, and performance, we ensure every vehicle receives expert care.
-    Our experienced team and modern equipment help deliver long-lasting solutions you can trust for every journey.
+    Wolf Vanguard Tyres provides premium quality tyres and reliable automotive services with a strong focus on safety, durability, and performance. We are committed to delivering trusted solutions, expert care, and high-quality products to ensure a smooth and safe driving experience.
   </p>
 </section>
 
 <section id="services">
   <h2 class="section-title">Our Services</h2>
   <div class="services">
-    <div class="service-box">Tyre Replacement</div>
-    <div class="service-box">Wheel Alignment</div>
-    <div class="service-box">Balancing</div>
-    <div class="service-box">Car Inspection</div>
+    <div class="service-box">
+      <i class="fas fa-tools"></i>
+      <h3>Tyre Replacement</h3>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-car"></i>
+      <h3>Wheel Alignment</h3>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-sync"></i>
+      <h3>Balancing</h3>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-search"></i>
+      <h3>Car Inspection</h3>
+    </div>
   </div>
 </section>
 
@@ -278,21 +317,24 @@
   <div class="products">
 
     <div class="product">
-      <img src="images/img1.jpg">
-      <h3>Car Tyres</h3>
+      <img src="images/img1.jpg" alt="">
+      <h3><i class="fas fa-car"></i> Car Tyres</h3>
       <p>Rs 12,000</p>
+      <a href="#contact" class="btn">Buy Now</a>
     </div>
 
     <div class="product">
-      <img src="images/img2.jpg">
-      <h3>SUV Tyres</h3>
+      <img src="images/img2.jpg" alt="">
+      <h3><i class="fas fa-truck"></i> SUV Tyres</h3>
       <p>Rs 18,000</p>
+      <a href="#contact" class="btn">Buy Now</a>
     </div>
 
     <div class="product">
-      <img src="images/img3.jpg">
-      <h3>Performance Tyres</h3>
+      <img src="images/img3.jpg" alt="">
+      <h3><i class="fas fa-tachometer-alt"></i> Performance Tyres</h3>
       <p>Rs 25,000</p>
+      <a href="#contact" class="btn">Buy Now</a>
     </div>
 
   </div>
@@ -300,8 +342,9 @@
 
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Us</h2>
-  <p>📞 +92 300 1234567</p>
-  <p>📍 Shahodi Garhi, Punjab, Pakistan</p>
+
+  <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+  <p><i class="fas fa-location-dot"></i> Shahodi Garhi, Punjab</p>
 
   <a href="https://wa.me/923001234567" class="btn">WhatsApp Us</a>
 
