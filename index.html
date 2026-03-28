@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WolfVanguard Tyres</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Wolf Vanguard Tyres - Premium tyres, wheel alignment, balancing and car inspection services.">
+  <meta name="keywords" content="tyres, tyre shop, car tyres, SUV tyres, wheel alignment">
+  <meta name="author" content="Wolf Vanguard Tyres">
+
+  <title>Wolf Vanguard Tyres</title>
 
   <style>
     * {
@@ -11,6 +17,10 @@
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -23,43 +33,53 @@
     header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 50px;
       background: #000;
-      position: sticky;
-      top: 0;
     }
 
     header h1 {
       color: red;
+      font-size: 22px;
+    }
+
+    nav {
+      display: flex;
     }
 
     nav a {
       color: #fff;
-      margin-left: 20px;
+      margin-left: 25px;
       text-decoration: none;
       transition: 0.3s;
+      font-weight: 500;
     }
 
     nav a:hover {
       color: red;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       height: 90vh;
-      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 20px;
     }
 
     .hero h2 {
-      font-size: 50px;
+      font-size: 48px;
+      color: #ff3b3b;
     }
 
     .hero p {
-      margin: 20px 0;
+      margin: 15px 0;
+      font-size: 18px;
+      color: #ccc;
     }
 
     .btn {
@@ -70,6 +90,8 @@
       cursor: pointer;
       text-decoration: none;
       transition: 0.3s;
+      display: inline-block;
+      border-radius: 4px;
     }
 
     .btn:hover {
@@ -78,19 +100,28 @@
 
     /* Sections */
     section {
-      padding: 60px 50px;
+      padding: 70px 50px;
       text-align: center;
     }
 
     h2.section-title {
       margin-bottom: 30px;
       color: red;
+      font-size: 28px;
+    }
+
+    /* About */
+    #about p {
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+      font-size: 17px;
     }
 
     /* Services */
     .services {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -129,6 +160,11 @@
       border-radius: 5px;
     }
 
+    .product p {
+      margin-top: 5px;
+      color: #ff3b3b;
+    }
+
     .product:hover {
       transform: scale(1.05);
     }
@@ -138,10 +174,24 @@
       background: #000;
     }
 
-    .contact a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #fff;
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form input,
+    form textarea {
+      width: 300px;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    form button {
+      width: 150px;
     }
 
     /* Footer */
@@ -149,22 +199,36 @@
       background: #000;
       padding: 20px;
       text-align: center;
+      color: #aaa;
     }
 
-    /* Responsive */
+    /* ✅ Responsive FIX (IMPORTANT) */
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* KEEP SAME LINE */
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 16px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      nav a {
+        margin: 5px 10px;
+        font-size: 14px;
       }
 
       .hero h2 {
         font-size: 30px;
       }
 
-      .services, .products {
-        flex-direction: column;
-        align-items: center;
+      section {
+        padding: 40px 20px;
       }
     }
   </style>
@@ -172,7 +236,6 @@
 
 <body>
 
-<!-- Navbar -->
 <header>
   <h1>Wolf Vanguard Tyres</h1>
   <nav>
@@ -183,25 +246,23 @@
   </nav>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
   <div>
     <h2>Premium Tyres for Maximum Performance</h2>
-    <p>Quality, Trust & Safety on Every Road</p>
-    <a href="#contact" class="btn">Contact Us</a>
+    <p>High-quality tyres and expert services ensuring safety, durability, and top performance on every road.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
 
-<!-- About -->
 <section id="about">
   <h2 class="section-title">About Us</h2>
   <p>
-    We provide high-quality tyres and automotive services with years of experience.
-    Our goal is to ensure safety, durability, and performance for your vehicle.
+    At Wolf Vanguard Tyres, we specialize in providing premium quality tyres and reliable automotive services.
+    With a strong focus on customer satisfaction, safety, and performance, we ensure every vehicle receives expert care.
+    Our experienced team and modern equipment help deliver long-lasting solutions you can trust for every journey.
   </p>
 </section>
 
-<!-- Services -->
 <section id="services">
   <h2 class="section-title">Our Services</h2>
   <div class="services">
@@ -212,36 +273,48 @@
   </div>
 </section>
 
-<!-- Products -->
 <section id="products">
   <h2 class="section-title">Our Tyres</h2>
   <div class="products">
+
     <div class="product">
       <img src="images/img1.jpg">
       <h3>Car Tyres</h3>
+      <p>Rs 12,000</p>
     </div>
+
     <div class="product">
       <img src="images/img2.jpg">
       <h3>SUV Tyres</h3>
+      <p>Rs 18,000</p>
     </div>
+
     <div class="product">
       <img src="images/img3.jpg">
       <h3>Performance Tyres</h3>
+      <p>Rs 25,000</p>
     </div>
+
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Us</h2>
   <p>📞 +92 300 1234567</p>
   <p>📍 Shahodi Garhi, Punjab, Pakistan</p>
-  <a href="https://wa.me/923001234567" class="btn">Chat on WhatsApp</a>
+
+  <a href="https://wa.me/923001234567" class="btn">WhatsApp Us</a>
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button class="btn">Send</button>
+  </form>
 </section>
 
-<!-- Footer -->
 <footer>
-  <p>© 2026 Vanguard Tyres. All Rights Reserved.</p>
+  <p>© 2026 Wolf Vanguard Tyres. All Rights Reserved.</p>
 </footer>
 
 </body>
